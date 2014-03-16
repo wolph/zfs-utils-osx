@@ -1,6 +1,7 @@
 import sys
 import subprocess
 import textwrap
+import decimal
 from . import constants
 from . import utils
 from . import argparse_utils
@@ -46,6 +47,7 @@ def zpool_command(args):
         context['mountpoint'] %= context
         utils.execute(context, constants.ZPOOL_CREATE_COMMAND)
 
+
 def get_parser(subparsers):
     zpool = subparsers.add_parser('zpool', help='zpool creation')
     zpool.add_argument(
@@ -73,3 +75,4 @@ def get_parser(subparsers):
         '-p', '--pattern', default='%(pool_name)s_%(i)02d',
         help='File name pattern to store the images (default: %(default)s)')
     zpool.set_defaults(func=zpool_command)
+
