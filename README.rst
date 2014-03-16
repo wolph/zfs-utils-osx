@@ -8,10 +8,6 @@ Introduction
     :alt: Test Status
     :target: https://travis-ci.org/WoLpH/zfs-utils-osx
 
-.. image:: https://coveralls.io/repos/WoLpH/zfs-utils-osx/badge.png?branch=master
-    :alt: Coverage Status
-    :target: https://coveralls.io/r/WoLpH/zfs-utils-osx?branch=master
-
 .. image:: https://landscape.io/github/WoLpH/django-statsd/master/landscape.png
    :target: https://landscape.io/github/WoLpH/django-statsd/master
    :alt: Code Health
@@ -36,6 +32,7 @@ To create a pool (does a dry-run with the `-n` flag):
     zfs.py zpool -n <pool_name>
 
 ::
+
     usage: zfs.py [-h] {zpool} ...
 
     optional arguments:
@@ -48,6 +45,7 @@ To create a pool (does a dry-run with the `-n` flag):
         zpool     zpool creation
 
 ::
+
     usage: zfs.py zpool [-h] [-c COUNT] [-s SIZE]
                         [-t {raidz1,raidz2,raidz3,mirror,raidz}] [-n]
                         [-m MOUNTPOINT] [-o] [-p PATTERN]
