@@ -31,7 +31,7 @@ To create a pool (does a dry-run with the `-n` flag):
 
     zfs.py zpool -n <pool_name>
 
-::
+Usage:
 
     usage: zfs.py [-h] {zpool} ...
 
@@ -44,7 +44,7 @@ To create a pool (does a dry-run with the `-n` flag):
       {zpool}
         zpool     zpool creation
 
-::
+Zpool usage:
 
     usage: zfs.py zpool [-h] [-c COUNT] [-s SIZE]
                         [-t {raidz1,raidz2,raidz3,mirror,raidz}] [-n]
