@@ -41,10 +41,11 @@ Usage:
     Subcommands:
       Please specify one of the following subcommands
 
-      {zpool}
+      {zpool,load}
         zpool     zpool creation
+        load        load (import) the zpools
 
-Zpool usage:
+Zpool create usage:
 
     usage: zfs.py zpool [-h] [-c COUNT] [-s SIZE]
                         [-t {raidz1,raidz2,raidz3,mirror,raidz}] [-n]
@@ -70,3 +71,24 @@ Zpool usage:
       -p PATTERN, --pattern PATTERN
                             File name pattern to store the images (default:
                             %(pool_name)s_%(i)02d)
+
+Zpool import usage:
+
+    usage: zfs.py load [-h] [-d IMAGE_DIRECTORY] [-p PREFIX] [--postfix POSTFIX]
+                       [-n]
+                       pool_names [pool_names ...]
+
+    positional arguments:
+      pool_names            The name of the pool to import
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -d IMAGE_DIRECTORY, --image-directory IMAGE_DIRECTORY
+                            File name pattern to store the images (default:
+                            ~/zfs/)
+      -p PREFIX, --prefix PREFIX
+                            File name prefix for the images (default:
+                            %(pool_name)s_)
+      --postfix POSTFIX     File name postfix for the images (default: )
+      -n, --no-op, --dry-run
+                            Show what will be done but dont execute

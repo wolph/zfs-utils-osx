@@ -26,7 +26,7 @@ ZPOOL_ATTACH_IMAGE_COMMAND = '''
 hdiutil attach
     -nomount
     %(extra_args)s
-    %(name)s.sparseimage
+    %(name)s
 '''
 ZPOOL_CREATE_COMMAND = '''
 sudo zpool create
@@ -37,4 +37,9 @@ sudo zpool create
     %(type)s
     %(devices)s
 '''
+ZPOOL_IMPORT_COMMAND = '''
+sudo zpool import %(pool_name)s
+'''
+IMAGE_NAME = '%(prefix)s%(i)02d%(postfix)s'
+IMAGE_NAME_RE = '(%(prefix)s)(\d{2})(%(postfix)s).sparseimage'
 

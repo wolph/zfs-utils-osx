@@ -13,15 +13,17 @@ def zpool_command(args):
     context['image_size'] = args.size / effective_image_count
     context['physical_size'] = context['image_size'] * args.count
     context['effective_size'] = context['image_size'] * effective_image_count
+    context['prefix'] %= context
+    context['postfix'] %= context
     context['i'] = 0
-    context['name'] = args.pattern % context
+    context['name'] = constants.IMAGE_NAME % context
     context['extra_args'] = ''
     print textwrap.fill(constants.ZPOOL_CREATE_MESSAGE % context)
 
     devices = []
     for i in range(args.count):
         context['i'] = i
-        context['name'] = args.pattern % context
+        context['name'] = constants.IMAGE_NAME % context
         try:
             if args.overwrite:
                 arg = '-ov'
@@ -34,6 +36,7 @@ def zpool_command(args):
             sys.exit(1)
 
         try:
+            context['name'] += '.sparseimage'
             device = utils.execute(context,
                                    constants.ZPOOL_ATTACH_IMAGE_COMMAND)
             if device:
@@ -72,7 +75,10 @@ def get_parser(subparsers):
         help='Overwrite old images if they exist')
     zpool.add_argument('pool_name', help='The name of the pool to create')
     zpool.add_argument(
-        '-p', '--pattern', default='%(pool_name)s_%(i)02d',
-        help='File name pattern to store the images (default: %(default)s)')
+        '-p', '--prefix', default='%(pool_name)s_',
+        help='File name prefix for the images (default: %(default)s)')
+    zpool.add_argument(
+        '--postfix', default='',
+        help='File name postfix for the images (default: %(default)s)')
     zpool.set_defaults(func=zpool_command)
 

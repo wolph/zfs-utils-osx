@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import zpool
+import load
 
 
 def get_parser():
@@ -9,6 +10,7 @@ def get_parser():
         title='Subcommands',
         description='Please specify one of the following subcommands')
     zpool.get_parser(subparsers)
+    load.get_parser(subparsers)
 
     return parser
 
