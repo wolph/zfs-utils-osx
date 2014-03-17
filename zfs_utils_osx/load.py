@@ -2,11 +2,8 @@ import re
 import os
 import sys
 import subprocess
-import textwrap
-import decimal
 from . import constants
 from . import utils
-from . import argparse_utils
 
 
 def load_command(args):
@@ -27,7 +24,7 @@ def load_command(args):
                 continue
             try:
                 context['name'] = os.path.join(path, file_)
-                utils.execute( context, constants.ZPOOL_ATTACH_IMAGE_COMMAND)
+                utils.execute(context, constants.ZPOOL_ATTACH_IMAGE_COMMAND)
             except subprocess.CalledProcessError:
                 print 'Unable to attach image'
                 sys.exit(1)
@@ -37,7 +34,7 @@ def load_command(args):
         context['pool_name'] = name
 
         try:
-            utils.execute( context, constants.ZPOOL_IMPORT_COMMAND)
+            utils.execute(context, constants.ZPOOL_IMPORT_COMMAND)
         except subprocess.CalledProcessError:
             print 'Unable to import zpool'
             sys.exit(1)
@@ -46,7 +43,7 @@ def load_command(args):
 def get_parser(subparsers):
     load = subparsers.add_parser('load', help='load (import) the zpools')
     load.add_argument('pool_names', help='The name of the pool to import',
-                       nargs='+')
+                      nargs='+')
     load.add_argument(
         '-d', '--image-directory', default='~/zfs/',
         help='File name pattern to store the images (default: %(default)s)')
