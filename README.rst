@@ -8,10 +8,10 @@ Introduction
     :alt: Test Status
     :target: https://travis-ci.org/WoLpH/zfs-utils-osx
 
-.. image:: https://requires.io/github/WoLpH/zfs-utils-osx/requirements.png?branch=master
-   :target: https://requires.io/github/WoLpH/zfs-utils-osx/requirements/?branch=master
-   :alt: Requirements Status
-
+.. image:: https://requires.io/github/WoLpH/zsh-completions/requirements.svg?branch=master
+     :target: https://requires.io/github/WoLpH/zsh-completions/requirements/?branch=master
+     :alt: Requirements Status
+     
 A simple script to create and manage virtual ZFS images on OS X without
 requiring repartitioning
 
