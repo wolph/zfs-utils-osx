@@ -8,10 +8,6 @@ Introduction
     :alt: Test Status
     :target: https://travis-ci.org/WoLpH/zfs-utils-osx
 
-.. image:: https://landscape.io/github/WoLpH/django-statsd/master/landscape.png
-   :target: https://landscape.io/github/WoLpH/django-statsd/master
-   :alt: Code Health
-
 .. image:: https://requires.io/github/WoLpH/zfs-utils-osx/requirements.png?branch=master
    :target: https://requires.io/github/WoLpH/zfs-utils-osx/requirements/?branch=master
    :alt: Requirements Status
