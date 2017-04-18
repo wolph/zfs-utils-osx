@@ -4,10 +4,10 @@ ZFS Utils for OS X
 Introduction
 ------------------------------------------------------------------------------
 
-.. image:: https://travis-ci.org/WoLpH/zfs-utils-osx.png?branch=master
-    :alt: Test Status
+.. image:: https://travis-ci.org/WoLpH/zfs-utils-osx.svg?branch=master
     :target: https://travis-ci.org/WoLpH/zfs-utils-osx
-
+    :alt: Travis Test Status
+    
 .. image:: https://requires.io/github/WoLpH/zsh-completions/requirements.svg?branch=master
      :target: https://requires.io/github/WoLpH/zsh-completions/requirements/?branch=master
      :alt: Requirements Status
