@@ -4,14 +4,14 @@ ZFS Utils for OS X
 Introduction
 ------------------------------------------------------------------------------
 
-.. image:: https://travis-ci.org/WoLpH/zfs-utils-osx.svg?branch=master
-    :target: https://travis-ci.org/WoLpH/zfs-utils-osx
-    :alt: Travis Test Status
-    
-.. image:: https://requires.io/github/WoLpH/zsh-completions/requirements.svg?branch=master
-     :target: https://requires.io/github/WoLpH/zsh-completions/requirements/?branch=master
-     :alt: Requirements Status
-     
+.. image:: https://github.com/wolph/zfs-utils-osx/actions/workflows/tests.yml/badge.svg?branch=master
+    :target: https://github.com/wolph/zfs-utils-osx/actions/workflows/tests.yml?query=branch%3Amaster
+    :alt: Master test status
+
+.. image:: https://coveralls.io/repos/github/WoLpH/zfs-utils-osx/badge.svg?branch=master
+    :target: https://coveralls.io/github/WoLpH/zfs-utils-osx?branch=master
+    :alt: Master test coverage
+
 A simple script to create and manage virtual ZFS images on OS X without
 requiring repartitioning
 
@@ -88,3 +88,17 @@ Zpool import usage:
       --postfix POSTFIX     File name postfix for the images (default: )
       -n, --no-op, --dry-run
                             Show what will be done but dont execute
+
+Testing
+------------------------------------------------------------------------------
+
+Run the Python 2.7 tests in Docker::
+
+    docker run --rm -v "$PWD:/work" -w /work python:2.7.18-buster \
+        sh -c 'python -m pip install -r requirements.txt && python -m pytest'
+
+The tests replace command execution and directory traversal with test doubles.
+They do not create disk images or invoke ZFS. Coverage includes every package
+module and requires 100 percent line and branch coverage. These tests preserve
+existing behaviour, including integer division with the default size and reuse
+of the first expanded prefix when loading multiple pools.

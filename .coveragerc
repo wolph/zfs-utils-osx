@@ -14,3 +14,4 @@ exclude_lines =
 source = zfs_utils_osx
 branch = True
 
+relative_files = True
