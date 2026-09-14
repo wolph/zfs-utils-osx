@@ -8,8 +8,8 @@ Introduction
     :target: https://github.com/wolph/zfs-utils-osx/actions/workflows/tests.yml?query=branch%3Amaster
     :alt: Master test status
 
-.. image:: https://coveralls.io/repos/github/WoLpH/zfs-utils-osx/badge.svg?branch=master
-    :target: https://coveralls.io/github/WoLpH/zfs-utils-osx?branch=master
+.. image:: https://coveralls.io/repos/github/wolph/zfs-utils-osx/badge.svg?branch=master
+    :target: https://coveralls.io/github/wolph/zfs-utils-osx?branch=master
     :alt: Master test coverage
 
 A simple script to create and manage virtual ZFS images on OS X without
