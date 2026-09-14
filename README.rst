@@ -4,11 +4,11 @@ ZFS Utils for OS X
 Introduction
 ------------------------------------------------------------------------------
 
-.. image:: https://github.com/wolph/zfs-utils-osx/actions/workflows/tests.yml/badge.svg?branch=master
+.. image:: https://img.shields.io/github/actions/workflow/status/wolph/zfs-utils-osx/tests.yml?branch=master&label=CI&style=flat-square&labelColor=555
     :target: https://github.com/wolph/zfs-utils-osx/actions/workflows/tests.yml?query=branch%3Amaster
     :alt: Master test status
 
-.. image:: https://coveralls.io/repos/github/wolph/zfs-utils-osx/badge.svg?branch=master
+.. image:: https://img.shields.io/coverallsCoverage/github/wolph/zfs-utils-osx?branch=master&style=flat-square&labelColor=555
     :target: https://coveralls.io/github/wolph/zfs-utils-osx?branch=master
     :alt: Master test coverage
 
